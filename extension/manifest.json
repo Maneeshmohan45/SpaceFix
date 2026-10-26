@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "SpaceFix",
+  "version": "1.0.0",
+  "description": "Zero-latency offline autocorrect that fixes non-word typos on Spacebar with instant Backspace undo.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "SpaceFix Settings"
+  },
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "content/engine/contractions.js",
+        "content/engine/dictionary.js",
+        "content/engine/symspell.js",
+        "content/engine/ranking.js",
+        "content/undo_manager.js",
+        "content/dom/exclusions.js",
+        "content/dom/input_handler.js",
+        "content/dom/content_editable.js",
+        "content/content_script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/dictionary.json",
+        "assets/symspell_index.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

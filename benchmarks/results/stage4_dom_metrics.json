@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-26T17:35:45Z",
+  "stage": "Stage 4 Phase 1A (DOM Integration for <input> and <textarea>)",
+  "metrics": {
+    "end_to_end_latency": {
+      "mean_ms": 0.049,
+      "p50_ms": 0.041,
+      "p95_ms": 0.108,
+      "p99_ms": 0.170,
+      "iterations": 500,
+      "evaluation": "Imperceptible to human typists (< 0.17 ms worst case)"
+    },
+    "replacement_verification": {
+      "status": "PASS",
+      "method": "HTMLInputElement.setRangeText(replacement, start, end, 'end')"
+    },
+    "cursor_positioning": {
+      "status": "PASS",
+      "behavior": "Cursor placed immediately at the end of the replaced word before space"
+    },
+    "undo_behavior": {
+      "status": "PASS",
+      "trigger": "Immediate Backspace keystroke",
+      "behavior": "Reverts replacement to original typo and places caret at typo end; invalidates on other keypresses"
+    },
+    "exclusions": {
+      "status": "PASS",
+      "tested": ["password", "spellcheck=false", "monaco-editor", "tokens_with_digits", "acronyms"]
+    },
+    "repeated_typing": {
+      "status": "PASS",
+      "sequence_tested": "hey teh wrok doing -> hey the work doing"
+    }
+  }
+}

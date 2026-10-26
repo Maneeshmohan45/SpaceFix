@@ -1,0 +1,32 @@
+# Dependencies & Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Internal Scratch & Conversation Notes
+convo.md
+
+# Internal Agent Documentation (Workspace only)
+agent_docs/
+
+# QA Audits and Test Reports (Internal only)
+QAtests/
+QAtest*
+
+# Large raw datasets & temporary build artifacts
+data_pipeline/raw_wordlists/*.gz
+data_pipeline/raw_wordlists/*.zip
+data_pipeline/output/temp_*
+extension/assets/*.zip

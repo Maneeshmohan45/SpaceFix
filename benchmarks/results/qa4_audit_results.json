@@ -1,0 +1,1470 @@
+{
+  "summary": {
+    "total": 268,
+    "passed": 248,
+    "failed": 20,
+    "accuracy": "92.54",
+    "latency": {
+      "mean": 0.17314350000000014,
+      "p50": 0.1514999999999418,
+      "p95": 0.22119999999995343,
+      "p99": 0.3275000000003274
+    }
+  },
+  "categories": {
+    "Common Typos": {
+      "passed": 51,
+      "failed": 5,
+      "tests": [
+        {
+          "name": "thier -> their",
+          "passed": true,
+          "details": "Actual: \"their\""
+        },
+        {
+          "name": "peice -> piece",
+          "passed": false,
+          "details": "Actual: \"price\""
+        },
+        {
+          "name": "truely -> truly",
+          "passed": true,
+          "details": "Actual: \"truly\""
+        },
+        {
+          "name": "freind -> friend",
+          "passed": true,
+          "details": "Actual: \"friend\""
+        },
+        {
+          "name": "beleif -> belief",
+          "passed": true,
+          "details": "Actual: \"belief\""
+        },
+        {
+          "name": "tommorrow -> tomorrow",
+          "passed": true,
+          "details": "Actual: \"tomorrow\""
+        },
+        {
+          "name": "absense -> absence",
+          "passed": true,
+          "details": "Actual: \"absence\""
+        },
+        {
+          "name": "acceptible -> acceptable",
+          "passed": true,
+          "details": "Actual: \"acceptable\""
+        },
+        {
+          "name": "accross -> across",
+          "passed": true,
+          "details": "Actual: \"across\""
+        },
+        {
+          "name": "adress -> address",
+          "passed": true,
+          "details": "Actual: \"address\""
+        },
+        {
+          "name": "agressive -> aggressive",
+          "passed": true,
+          "details": "Actual: \"aggressive\""
+        },
+        {
+          "name": "appearence -> appearance",
+          "passed": true,
+          "details": "Actual: \"appearance\""
+        },
+        {
+          "name": "arguement -> argument",
+          "passed": true,
+          "details": "Actual: \"argument\""
+        },
+        {
+          "name": "basicly -> basically",
+          "passed": false,
+          "details": "Actual: \"basic\""
+        },
+        {
+          "name": "bussiness -> business",
+          "passed": true,
+          "details": "Actual: \"business\""
+        },
+        {
+          "name": "cemetary -> cemetery",
+          "passed": true,
+          "details": "Actual: \"cemetery\""
+        },
+        {
+          "name": "catagory -> category",
+          "passed": true,
+          "details": "Actual: \"category\""
+        },
+        {
+          "name": "consience -> conscience",
+          "passed": true,
+          "details": "Actual: \"conscience\""
+        },
+        {
+          "name": "definate -> definite",
+          "passed": true,
+          "details": "Actual: \"definite\""
+        },
+        {
+          "name": "disapear -> disappear",
+          "passed": true,
+          "details": "Actual: \"disappear\""
+        },
+        {
+          "name": "dissappoint -> disappoint",
+          "passed": true,
+          "details": "Actual: \"disappoint\""
+        },
+        {
+          "name": "existance -> existence",
+          "passed": true,
+          "details": "Actual: \"existence\""
+        },
+        {
+          "name": "familar -> familiar",
+          "passed": true,
+          "details": "Actual: \"familiar\""
+        },
+        {
+          "name": "foriegn -> foreign",
+          "passed": true,
+          "details": "Actual: \"foreign\""
+        },
+        {
+          "name": "guarentee -> guarantee",
+          "passed": true,
+          "details": "Actual: \"guarantee\""
+        },
+        {
+          "name": "harrass -> harass",
+          "passed": true,
+          "details": "Actual: \"harass\""
+        },
+        {
+          "name": "humerous -> humorous",
+          "passed": true,
+          "details": "Actual: \"humorous\""
+        },
+        {
+          "name": "hygene -> hygiene",
+          "passed": true,
+          "details": "Actual: \"hygiene\""
+        },
+        {
+          "name": "ignorence -> ignorance",
+          "passed": true,
+          "details": "Actual: \"ignorance\""
+        },
+        {
+          "name": "immediatly -> immediately",
+          "passed": true,
+          "details": "Actual: \"immediately\""
+        },
+        {
+          "name": "incidently -> incidentally",
+          "passed": false,
+          "details": "Actual: \"incidently\""
+        },
+        {
+          "name": "interupt -> interrupt",
+          "passed": true,
+          "details": "Actual: \"interrupt\""
+        },
+        {
+          "name": "knowlege -> knowledge",
+          "passed": true,
+          "details": "Actual: \"knowledge\""
+        },
+        {
+          "name": "millenium -> millennium",
+          "passed": true,
+          "details": "Actual: \"millennium\""
+        },
+        {
+          "name": "noticable -> noticeable",
+          "passed": true,
+          "details": "Actual: \"noticeable\""
+        },
+        {
+          "name": "occassion -> occasion",
+          "passed": true,
+          "details": "Actual: \"occasion\""
+        },
+        {
+          "name": "occurance -> occurrence",
+          "passed": false,
+          "details": "Actual: \"occurance\""
+        },
+        {
+          "name": "paralell -> parallel",
+          "passed": true,
+          "details": "Actual: \"parallel\""
+        },
+        {
+          "name": "perseverence -> perseverance",
+          "passed": true,
+          "details": "Actual: \"perseverance\""
+        },
+        {
+          "name": "posession -> possession",
+          "passed": true,
+          "details": "Actual: \"possession\""
+        },
+        {
+          "name": "prefered -> preferred",
+          "passed": true,
+          "details": "Actual: \"preferred\""
+        },
+        {
+          "name": "priviledge -> privilege",
+          "passed": true,
+          "details": "Actual: \"privilege\""
+        },
+        {
+          "name": "pronounciation -> pronunciation",
+          "passed": true,
+          "details": "Actual: \"pronunciation\""
+        },
+        {
+          "name": "refered -> referred",
+          "passed": true,
+          "details": "Actual: \"referred\""
+        },
+        {
+          "name": "relavent -> relevant",
+          "passed": true,
+          "details": "Actual: \"relevant\""
+        },
+        {
+          "name": "resistence -> resistance",
+          "passed": true,
+          "details": "Actual: \"resistance\""
+        },
+        {
+          "name": "rythm -> rhythm",
+          "passed": true,
+          "details": "Actual: \"rhythm\""
+        },
+        {
+          "name": "seige -> siege",
+          "passed": true,
+          "details": "Actual: \"siege\""
+        },
+        {
+          "name": "suprise -> surprise",
+          "passed": true,
+          "details": "Actual: \"surprise\""
+        },
+        {
+          "name": "tendancy -> tendency",
+          "passed": true,
+          "details": "Actual: \"tendency\""
+        },
+        {
+          "name": "threshhold -> threshold",
+          "passed": true,
+          "details": "Actual: \"threshold\""
+        },
+        {
+          "name": "tounge -> tongue",
+          "passed": false,
+          "details": "Actual: \"lounge\""
+        },
+        {
+          "name": "unforseen -> unforeseen",
+          "passed": true,
+          "details": "Actual: \"unforeseen\""
+        },
+        {
+          "name": "vaccum -> vacuum",
+          "passed": true,
+          "details": "Actual: \"vacuum\""
+        },
+        {
+          "name": "veiw -> view",
+          "passed": true,
+          "details": "Actual: \"view\""
+        },
+        {
+          "name": "yeild -> yield",
+          "passed": true,
+          "details": "Actual: \"yield\""
+        }
+      ]
+    },
+    "Distance-2 Omissions": {
+      "passed": 5,
+      "failed": 4,
+      "tests": [
+        {
+          "name": "mispel -> misspell",
+          "passed": false,
+          "details": "Actual: \"dispel\""
+        },
+        {
+          "name": "comitee -> committee",
+          "passed": true,
+          "details": "Actual: \"committee\""
+        },
+        {
+          "name": "succesfuly -> successfully",
+          "passed": false,
+          "details": "Actual: \"succesfuly\""
+        },
+        {
+          "name": "possesion -> possession",
+          "passed": true,
+          "details": "Actual: \"possession\""
+        },
+        {
+          "name": "milenium -> millennium",
+          "passed": true,
+          "details": "Actual: \"millennium\""
+        },
+        {
+          "name": "ocured -> occurred",
+          "passed": false,
+          "details": "Actual: \"cured\""
+        },
+        {
+          "name": "embaras -> embarrass",
+          "passed": false,
+          "details": "Actual: \"embarks\""
+        },
+        {
+          "name": "recuring -> recurring",
+          "passed": true,
+          "details": "Actual: \"recurring\""
+        },
+        {
+          "name": "supercede -> supersede",
+          "passed": true,
+          "details": "Actual: \"supersede\""
+        }
+      ]
+    },
+    "Valid Words Safety": {
+      "passed": 25,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "elephant remains untouched",
+          "passed": true,
+          "details": "Actual: \"elephant\""
+        },
+        {
+          "name": "sapphire remains untouched",
+          "passed": true,
+          "details": "Actual: \"sapphire\""
+        },
+        {
+          "name": "blanket remains untouched",
+          "passed": true,
+          "details": "Actual: \"blanket\""
+        },
+        {
+          "name": "thunder remains untouched",
+          "passed": true,
+          "details": "Actual: \"thunder\""
+        },
+        {
+          "name": "whisper remains untouched",
+          "passed": true,
+          "details": "Actual: \"whisper\""
+        },
+        {
+          "name": "candle remains untouched",
+          "passed": true,
+          "details": "Actual: \"candle\""
+        },
+        {
+          "name": "diamond remains untouched",
+          "passed": true,
+          "details": "Actual: \"diamond\""
+        },
+        {
+          "name": "harbor remains untouched",
+          "passed": true,
+          "details": "Actual: \"harbor\""
+        },
+        {
+          "name": "lantern remains untouched",
+          "passed": true,
+          "details": "Actual: \"lantern\""
+        },
+        {
+          "name": "meadow remains untouched",
+          "passed": true,
+          "details": "Actual: \"meadow\""
+        },
+        {
+          "name": "orchard remains untouched",
+          "passed": true,
+          "details": "Actual: \"orchard\""
+        },
+        {
+          "name": "pyramid remains untouched",
+          "passed": true,
+          "details": "Actual: \"pyramid\""
+        },
+        {
+          "name": "silver remains untouched",
+          "passed": true,
+          "details": "Actual: \"silver\""
+        },
+        {
+          "name": "velvet remains untouched",
+          "passed": true,
+          "details": "Actual: \"velvet\""
+        },
+        {
+          "name": "walnut remains untouched",
+          "passed": true,
+          "details": "Actual: \"walnut\""
+        },
+        {
+          "name": "compass remains untouched",
+          "passed": true,
+          "details": "Actual: \"compass\""
+        },
+        {
+          "name": "feather remains untouched",
+          "passed": true,
+          "details": "Actual: \"feather\""
+        },
+        {
+          "name": "glacier remains untouched",
+          "passed": true,
+          "details": "Actual: \"glacier\""
+        },
+        {
+          "name": "island remains untouched",
+          "passed": true,
+          "details": "Actual: \"island\""
+        },
+        {
+          "name": "journey remains untouched",
+          "passed": true,
+          "details": "Actual: \"journey\""
+        },
+        {
+          "name": "kettle remains untouched",
+          "passed": true,
+          "details": "Actual: \"kettle\""
+        },
+        {
+          "name": "lemon remains untouched",
+          "passed": true,
+          "details": "Actual: \"lemon\""
+        },
+        {
+          "name": "magnet remains untouched",
+          "passed": true,
+          "details": "Actual: \"magnet\""
+        },
+        {
+          "name": "needle remains untouched",
+          "passed": true,
+          "details": "Actual: \"needle\""
+        },
+        {
+          "name": "palace remains untouched",
+          "passed": true,
+          "details": "Actual: \"palace\""
+        }
+      ]
+    },
+    "Proper Names Safety": {
+      "passed": 24,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "Maya remains untouched",
+          "passed": false,
+          "details": "Actual: \"May\""
+        },
+        {
+          "name": "Liam remains untouched",
+          "passed": true,
+          "details": "Actual: \"Liam\""
+        },
+        {
+          "name": "Noah remains untouched",
+          "passed": true,
+          "details": "Actual: \"Noah\""
+        },
+        {
+          "name": "Lucas remains untouched",
+          "passed": true,
+          "details": "Actual: \"Lucas\""
+        },
+        {
+          "name": "Oliver remains untouched",
+          "passed": true,
+          "details": "Actual: \"Oliver\""
+        },
+        {
+          "name": "Emma remains untouched",
+          "passed": true,
+          "details": "Actual: \"Emma\""
+        },
+        {
+          "name": "Chloe remains untouched",
+          "passed": true,
+          "details": "Actual: \"Chloe\""
+        },
+        {
+          "name": "Ethan remains untouched",
+          "passed": true,
+          "details": "Actual: \"Ethan\""
+        },
+        {
+          "name": "Aiden remains untouched",
+          "passed": true,
+          "details": "Actual: \"Aiden\""
+        },
+        {
+          "name": "Zoe remains untouched",
+          "passed": false,
+          "details": "Actual: \"Zone\""
+        },
+        {
+          "name": "Rajesh remains untouched",
+          "passed": true,
+          "details": "Actual: \"Rajesh\""
+        },
+        {
+          "name": "Suresh remains untouched",
+          "passed": true,
+          "details": "Actual: \"Suresh\""
+        },
+        {
+          "name": "Anand remains untouched",
+          "passed": true,
+          "details": "Actual: \"Anand\""
+        },
+        {
+          "name": "Kavita remains untouched",
+          "passed": true,
+          "details": "Actual: \"Kavita\""
+        },
+        {
+          "name": "Deepak remains untouched",
+          "passed": true,
+          "details": "Actual: \"Deepak\""
+        },
+        {
+          "name": "Sunil remains untouched",
+          "passed": true,
+          "details": "Actual: \"Sunil\""
+        },
+        {
+          "name": "Pooja remains untouched",
+          "passed": true,
+          "details": "Actual: \"Pooja\""
+        },
+        {
+          "name": "Manoj remains untouched",
+          "passed": false,
+          "details": "Actual: \"Manor\""
+        },
+        {
+          "name": "vikram remains untouched",
+          "passed": true,
+          "details": "Actual: \"vikram\""
+        },
+        {
+          "name": "sneha remains untouched",
+          "passed": true,
+          "details": "Actual: \"sneha\""
+        },
+        {
+          "name": "ananya remains untouched",
+          "passed": true,
+          "details": "Actual: \"ananya\""
+        },
+        {
+          "name": "aditya remains untouched",
+          "passed": true,
+          "details": "Actual: \"aditya\""
+        },
+        {
+          "name": "priya remains untouched",
+          "passed": true,
+          "details": "Actual: \"priya\""
+        },
+        {
+          "name": "mia remains untouched",
+          "passed": true,
+          "details": "Actual: \"mia\""
+        },
+        {
+          "name": "harper remains untouched",
+          "passed": true,
+          "details": "Actual: \"harper\""
+        },
+        {
+          "name": "leo remains untouched",
+          "passed": true,
+          "details": "Actual: \"leo\""
+        },
+        {
+          "name": "ava remains untouched",
+          "passed": true,
+          "details": "Actual: \"ava\""
+        }
+      ]
+    },
+    "Countries & Places": {
+      "passed": 22,
+      "failed": 2,
+      "tests": [
+        {
+          "name": "Argentina remains untouched",
+          "passed": true,
+          "details": "Actual: \"Argentina\""
+        },
+        {
+          "name": "Belgium remains untouched",
+          "passed": true,
+          "details": "Actual: \"Belgium\""
+        },
+        {
+          "name": "Colombia remains untouched",
+          "passed": true,
+          "details": "Actual: \"Colombia\""
+        },
+        {
+          "name": "Denmark remains untouched",
+          "passed": true,
+          "details": "Actual: \"Denmark\""
+        },
+        {
+          "name": "Egypt remains untouched",
+          "passed": true,
+          "details": "Actual: \"Egypt\""
+        },
+        {
+          "name": "Finland remains untouched",
+          "passed": true,
+          "details": "Actual: \"Finland\""
+        },
+        {
+          "name": "Greece remains untouched",
+          "passed": true,
+          "details": "Actual: \"Greece\""
+        },
+        {
+          "name": "Hungary remains untouched",
+          "passed": false,
+          "details": "Actual: \"Hungry\""
+        },
+        {
+          "name": "Ireland remains untouched",
+          "passed": true,
+          "details": "Actual: \"Ireland\""
+        },
+        {
+          "name": "Jordan remains untouched",
+          "passed": true,
+          "details": "Actual: \"Jordan\""
+        },
+        {
+          "name": "Kuwait remains untouched",
+          "passed": true,
+          "details": "Actual: \"Kuwait\""
+        },
+        {
+          "name": "Lebanon remains untouched",
+          "passed": true,
+          "details": "Actual: \"Lebanon\""
+        },
+        {
+          "name": "Mexico remains untouched",
+          "passed": true,
+          "details": "Actual: \"Mexico\""
+        },
+        {
+          "name": "Norway remains untouched",
+          "passed": true,
+          "details": "Actual: \"Norway\""
+        },
+        {
+          "name": "Oman remains untouched",
+          "passed": true,
+          "details": "Actual: \"Oman\""
+        },
+        {
+          "name": "Peru remains untouched",
+          "passed": false,
+          "details": "Actual: \"Per\""
+        },
+        {
+          "name": "Qatar remains untouched",
+          "passed": true,
+          "details": "Actual: \"Qatar\""
+        },
+        {
+          "name": "Romania remains untouched",
+          "passed": true,
+          "details": "Actual: \"Romania\""
+        },
+        {
+          "name": "Spain remains untouched",
+          "passed": true,
+          "details": "Actual: \"Spain\""
+        },
+        {
+          "name": "Turkey remains untouched",
+          "passed": true,
+          "details": "Actual: \"Turkey\""
+        },
+        {
+          "name": "Ukraine remains untouched",
+          "passed": true,
+          "details": "Actual: \"Ukraine\""
+        },
+        {
+          "name": "Vietnam remains untouched",
+          "passed": true,
+          "details": "Actual: \"Vietnam\""
+        },
+        {
+          "name": "Yemen remains untouched",
+          "passed": true,
+          "details": "Actual: \"Yemen\""
+        },
+        {
+          "name": "Zimbabwe remains untouched",
+          "passed": true,
+          "details": "Actual: \"Zimbabwe\""
+        }
+      ]
+    },
+    "Modern Tech & Tools": {
+      "passed": 26,
+      "failed": 3,
+      "tests": [
+        {
+          "name": "graphql remains untouched",
+          "passed": true,
+          "details": "Actual: \"graphql\""
+        },
+        {
+          "name": "kafka remains untouched",
+          "passed": true,
+          "details": "Actual: \"kafka\""
+        },
+        {
+          "name": "fastapi remains untouched",
+          "passed": true,
+          "details": "Actual: \"fastapi\""
+        },
+        {
+          "name": "pytorch remains untouched",
+          "passed": true,
+          "details": "Actual: \"pytorch\""
+        },
+        {
+          "name": "nextjs remains untouched",
+          "passed": true,
+          "details": "Actual: \"nextjs\""
+        },
+        {
+          "name": "tailwind remains untouched",
+          "passed": true,
+          "details": "Actual: \"tailwind\""
+        },
+        {
+          "name": "typescript remains untouched",
+          "passed": true,
+          "details": "Actual: \"typescript\""
+        },
+        {
+          "name": "angular remains untouched",
+          "passed": true,
+          "details": "Actual: \"angular\""
+        },
+        {
+          "name": "vue remains untouched",
+          "passed": true,
+          "details": "Actual: \"vue\""
+        },
+        {
+          "name": "svelte remains untouched",
+          "passed": true,
+          "details": "Actual: \"svelte\""
+        },
+        {
+          "name": "django remains untouched",
+          "passed": true,
+          "details": "Actual: \"django\""
+        },
+        {
+          "name": "flask remains untouched",
+          "passed": true,
+          "details": "Actual: \"flask\""
+        },
+        {
+          "name": "express remains untouched",
+          "passed": true,
+          "details": "Actual: \"express\""
+        },
+        {
+          "name": "postgres remains untouched",
+          "passed": true,
+          "details": "Actual: \"postgres\""
+        },
+        {
+          "name": "mongodb remains untouched",
+          "passed": true,
+          "details": "Actual: \"mongodb\""
+        },
+        {
+          "name": "sqlite remains untouched",
+          "passed": true,
+          "details": "Actual: \"sqlite\""
+        },
+        {
+          "name": "aws remains untouched",
+          "passed": false,
+          "details": "Actual: \"as\""
+        },
+        {
+          "name": "azure remains untouched",
+          "passed": true,
+          "details": "Actual: \"azure\""
+        },
+        {
+          "name": "gcp remains untouched",
+          "passed": false,
+          "details": "Actual: \"gap\""
+        },
+        {
+          "name": "cloudflare remains untouched",
+          "passed": true,
+          "details": "Actual: \"cloudflare\""
+        },
+        {
+          "name": "github remains untouched",
+          "passed": true,
+          "details": "Actual: \"github\""
+        },
+        {
+          "name": "gitlab remains untouched",
+          "passed": true,
+          "details": "Actual: \"gitlab\""
+        },
+        {
+          "name": "npm remains untouched",
+          "passed": true,
+          "details": "Actual: \"npm\""
+        },
+        {
+          "name": "yarn remains untouched",
+          "passed": true,
+          "details": "Actual: \"yarn\""
+        },
+        {
+          "name": "webpack remains untouched",
+          "passed": true,
+          "details": "Actual: \"webpack\""
+        },
+        {
+          "name": "vite remains untouched",
+          "passed": false,
+          "details": "Actual: \"vote\""
+        },
+        {
+          "name": "streamlit remains untouched",
+          "passed": true,
+          "details": "Actual: \"streamlit\""
+        },
+        {
+          "name": "redis remains untouched",
+          "passed": true,
+          "details": "Actual: \"redis\""
+        },
+        {
+          "name": "vscode remains untouched",
+          "passed": true,
+          "details": "Actual: \"vscode\""
+        }
+      ]
+    },
+    "Slang & Chat Terms": {
+      "passed": 16,
+      "failed": 2,
+      "tests": [
+        {
+          "name": "sup remains untouched",
+          "passed": true,
+          "details": "Actual: \"sup\""
+        },
+        {
+          "name": "cuz remains untouched",
+          "passed": true,
+          "details": "Actual: \"cuz\""
+        },
+        {
+          "name": "idk remains untouched",
+          "passed": true,
+          "details": "Actual: \"idk\""
+        },
+        {
+          "name": "afaik remains untouched",
+          "passed": true,
+          "details": "Actual: \"afaik\""
+        },
+        {
+          "name": "imo remains untouched",
+          "passed": true,
+          "details": "Actual: \"imo\""
+        },
+        {
+          "name": "imho remains untouched",
+          "passed": true,
+          "details": "Actual: \"imho\""
+        },
+        {
+          "name": "gg remains untouched",
+          "passed": true,
+          "details": "Actual: \"gg\""
+        },
+        {
+          "name": "wp remains untouched",
+          "passed": false,
+          "details": "Actual: \"we\""
+        },
+        {
+          "name": "rn remains untouched",
+          "passed": true,
+          "details": "Actual: \"rn\""
+        },
+        {
+          "name": "smh remains untouched",
+          "passed": true,
+          "details": "Actual: \"smh\""
+        },
+        {
+          "name": "fyi remains untouched",
+          "passed": true,
+          "details": "Actual: \"fyi\""
+        },
+        {
+          "name": "btw remains untouched",
+          "passed": true,
+          "details": "Actual: \"btw\""
+        },
+        {
+          "name": "omg remains untouched",
+          "passed": true,
+          "details": "Actual: \"omg\""
+        },
+        {
+          "name": "thx remains untouched",
+          "passed": false,
+          "details": "Actual: \"the\""
+        },
+        {
+          "name": "pls remains untouched",
+          "passed": true,
+          "details": "Actual: \"pls\""
+        },
+        {
+          "name": "goat remains untouched",
+          "passed": true,
+          "details": "Actual: \"goat\""
+        },
+        {
+          "name": "sus remains untouched",
+          "passed": true,
+          "details": "Actual: \"sus\""
+        },
+        {
+          "name": "vibes remains untouched",
+          "passed": true,
+          "details": "Actual: \"vibes\""
+        }
+      ]
+    },
+    "Contractions Expansion": {
+      "passed": 23,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "cant -> can't",
+          "passed": true,
+          "details": "Actual: \"can't\""
+        },
+        {
+          "name": "wont -> won't",
+          "passed": true,
+          "details": "Actual: \"won't\""
+        },
+        {
+          "name": "dont -> don't",
+          "passed": true,
+          "details": "Actual: \"don't\""
+        },
+        {
+          "name": "aint -> ain't",
+          "passed": true,
+          "details": "Actual: \"ain't\""
+        },
+        {
+          "name": "whos -> who's",
+          "passed": true,
+          "details": "Actual: \"who's\""
+        },
+        {
+          "name": "whats -> what's",
+          "passed": true,
+          "details": "Actual: \"what's\""
+        },
+        {
+          "name": "wheres -> where's",
+          "passed": true,
+          "details": "Actual: \"where's\""
+        },
+        {
+          "name": "hows -> how's",
+          "passed": true,
+          "details": "Actual: \"how's\""
+        },
+        {
+          "name": "theyre -> they're",
+          "passed": true,
+          "details": "Actual: \"they're\""
+        },
+        {
+          "name": "weve -> we've",
+          "passed": true,
+          "details": "Actual: \"we've\""
+        },
+        {
+          "name": "youve -> you've",
+          "passed": true,
+          "details": "Actual: \"you've\""
+        },
+        {
+          "name": "theyve -> they've",
+          "passed": true,
+          "details": "Actual: \"they've\""
+        },
+        {
+          "name": "couldve -> could've",
+          "passed": true,
+          "details": "Actual: \"could've\""
+        },
+        {
+          "name": "shouldve -> should've",
+          "passed": true,
+          "details": "Actual: \"should've\""
+        },
+        {
+          "name": "wouldve -> would've",
+          "passed": true,
+          "details": "Actual: \"would've\""
+        },
+        {
+          "name": "yall -> y'all",
+          "passed": true,
+          "details": "Actual: \"y'all\""
+        },
+        {
+          "name": "y'all -> y'all",
+          "passed": true,
+          "details": "Actual: \"y'all\""
+        },
+        {
+          "name": "theyll -> they'll",
+          "passed": true,
+          "details": "Actual: \"they'll\""
+        },
+        {
+          "name": "youll -> you'll",
+          "passed": true,
+          "details": "Actual: \"you'll\""
+        },
+        {
+          "name": "can't -> can't",
+          "passed": true,
+          "details": "Actual: \"can't\""
+        },
+        {
+          "name": "won't -> won't",
+          "passed": true,
+          "details": "Actual: \"won't\""
+        },
+        {
+          "name": "don't -> don't",
+          "passed": true,
+          "details": "Actual: \"don't\""
+        },
+        {
+          "name": "it's -> it's",
+          "passed": true,
+          "details": "Actual: \"it's\""
+        }
+      ]
+    },
+    "Code Identifiers Safety": {
+      "passed": 21,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "customer_account_id remains untouched",
+          "passed": true,
+          "details": "Actual: \"customer_account_id\""
+        },
+        {
+          "name": "created_timestamp remains untouched",
+          "passed": true,
+          "details": "Actual: \"created_timestamp\""
+        },
+        {
+          "name": "max_retry_count remains untouched",
+          "passed": true,
+          "details": "Actual: \"max_retry_count\""
+        },
+        {
+          "name": "auth_token_key remains untouched",
+          "passed": true,
+          "details": "Actual: \"auth_token_key\""
+        },
+        {
+          "name": "session_data_val remains untouched",
+          "passed": true,
+          "details": "Actual: \"session_data_val\""
+        },
+        {
+          "name": "user_profile_id remains untouched",
+          "passed": true,
+          "details": "Actual: \"user_profile_id\""
+        },
+        {
+          "name": "order_id remains untouched",
+          "passed": true,
+          "details": "Actual: \"order_id\""
+        },
+        {
+          "name": "user-nav-link remains untouched",
+          "passed": true,
+          "details": "Actual: \"user-nav-link\""
+        },
+        {
+          "name": "btn-primary remains untouched",
+          "passed": true,
+          "details": "Actual: \"btn-primary\""
+        },
+        {
+          "name": "card-header-title remains untouched",
+          "passed": true,
+          "details": "Actual: \"card-header-title\""
+        },
+        {
+          "name": "data-testid remains untouched",
+          "passed": true,
+          "details": "Actual: \"data-testid\""
+        },
+        {
+          "name": "getUserProfile remains untouched",
+          "passed": true,
+          "details": "Actual: \"getUserProfile\""
+        },
+        {
+          "name": "onClickHandler remains untouched",
+          "passed": true,
+          "details": "Actual: \"onClickHandler\""
+        },
+        {
+          "name": "totalCalculatedSum remains untouched",
+          "passed": true,
+          "details": "Actual: \"totalCalculatedSum\""
+        },
+        {
+          "name": "isModalOpen remains untouched",
+          "passed": true,
+          "details": "Actual: \"isModalOpen\""
+        },
+        {
+          "name": "DATABASE_URL remains untouched",
+          "passed": true,
+          "details": "Actual: \"DATABASE_URL\""
+        },
+        {
+          "name": "JWT_SECRET remains untouched",
+          "passed": true,
+          "details": "Actual: \"JWT_SECRET\""
+        },
+        {
+          "name": "NODE_ENV remains untouched",
+          "passed": true,
+          "details": "Actual: \"NODE_ENV\""
+        },
+        {
+          "name": "PORT remains untouched",
+          "passed": true,
+          "details": "Actual: \"PORT\""
+        },
+        {
+          "name": "/etc/nginx/nginx.conf remains untouched",
+          "passed": true,
+          "details": "Actual: \"/etc/nginx/nginx.conf\""
+        },
+        {
+          "name": "../relative/path/to/script.sh remains untouched",
+          "passed": true,
+          "details": "Actual: \"../relative/path/to/script.sh\""
+        }
+      ]
+    },
+    "Trailing Punctuation": {
+      "passed": 17,
+      "failed": 1,
+      "tests": [
+        {
+          "name": "thier: -> their:",
+          "passed": true,
+          "details": "Actual: \"their:\""
+        },
+        {
+          "name": "adress: -> address:",
+          "passed": true,
+          "details": "Actual: \"address:\""
+        },
+        {
+          "name": "freind: -> friend:",
+          "passed": true,
+          "details": "Actual: \"friend:\""
+        },
+        {
+          "name": "note: -> note:",
+          "passed": true,
+          "details": "Actual: \"note:\""
+        },
+        {
+          "name": "warning: -> warning:",
+          "passed": true,
+          "details": "Actual: \"warning:\""
+        },
+        {
+          "name": "beleive: -> believe:",
+          "passed": true,
+          "details": "Actual: \"believe:\""
+        },
+        {
+          "name": "thier; -> their;",
+          "passed": true,
+          "details": "Actual: \"their;\""
+        },
+        {
+          "name": "freind; -> friend;",
+          "passed": true,
+          "details": "Actual: \"friend;\""
+        },
+        {
+          "name": "thier. -> their.",
+          "passed": true,
+          "details": "Actual: \"their.\""
+        },
+        {
+          "name": "adress. -> address.",
+          "passed": true,
+          "details": "Actual: \"address.\""
+        },
+        {
+          "name": "peice. -> piece.",
+          "passed": false,
+          "details": "Actual: \"price.\""
+        },
+        {
+          "name": "thier, -> their,",
+          "passed": true,
+          "details": "Actual: \"their,\""
+        },
+        {
+          "name": "adress, -> address,",
+          "passed": true,
+          "details": "Actual: \"address,\""
+        },
+        {
+          "name": "truely, -> truly,",
+          "passed": true,
+          "details": "Actual: \"truly,\""
+        },
+        {
+          "name": "thier? -> their?",
+          "passed": true,
+          "details": "Actual: \"their?\""
+        },
+        {
+          "name": "freind? -> friend?",
+          "passed": true,
+          "details": "Actual: \"friend?\""
+        },
+        {
+          "name": "thier! -> their!",
+          "passed": true,
+          "details": "Actual: \"their!\""
+        },
+        {
+          "name": "suprise! -> surprise!",
+          "passed": true,
+          "details": "Actual: \"surprise!\""
+        }
+      ]
+    },
+    "URLs & Protocols Safety": {
+      "passed": 7,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "https://microsoft.com remains untouched",
+          "passed": true,
+          "details": "Actual: \"https://microsoft.com\""
+        },
+        {
+          "name": "https://support.google.com/mail remains untouched",
+          "passed": true,
+          "details": "Actual: \"https://support.google.com/mail\""
+        },
+        {
+          "name": "http://localhost:3000 remains untouched",
+          "passed": true,
+          "details": "Actual: \"http://localhost:3000\""
+        },
+        {
+          "name": "ftp://files.example.com remains untouched",
+          "passed": true,
+          "details": "Actual: \"ftp://files.example.com\""
+        },
+        {
+          "name": "contact@company.co.uk remains untouched",
+          "passed": true,
+          "details": "Actual: \"contact@company.co.uk\""
+        },
+        {
+          "name": "sales.dept@enterprise.org remains untouched",
+          "passed": true,
+          "details": "Actual: \"sales.dept@enterprise.org\""
+        },
+        {
+          "name": "https://chatgpt.com/c/12345 remains untouched",
+          "passed": true,
+          "details": "Actual: \"https://chatgpt.com/c/12345\""
+        }
+      ]
+    },
+    "Rejection Loop Stability": {
+      "passed": 4,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "thier: 5-cycle Backspace<->Space rejection",
+          "passed": true,
+          "details": "Restored: \"thier\", Final: \"thier\""
+        },
+        {
+          "name": "adress: 5-cycle Backspace<->Space rejection",
+          "passed": true,
+          "details": "Restored: \"adress\", Final: \"adress\""
+        },
+        {
+          "name": "freind: 5-cycle Backspace<->Space rejection",
+          "passed": true,
+          "details": "Restored: \"freind\", Final: \"freind\""
+        },
+        {
+          "name": "truely: 5-cycle Backspace<->Space rejection",
+          "passed": true,
+          "details": "Restored: \"truely\", Final: \"truely\""
+        }
+      ]
+    },
+    "Double Backspace Handling": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "First Backspace undos, second Backspace is native",
+          "passed": true,
+          "details": "Undo prevented: true, Second prevented: false"
+        }
+      ]
+    },
+    "Web Apps: ChatGPT (#prompt-textarea)": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Auto-correct in ChatGPT composer",
+          "passed": true,
+          "details": "Result: \"their\""
+        }
+      ]
+    },
+    "Web Apps: Gemini (rich-textarea)": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Auto-correct in Gemini prompt box",
+          "passed": true,
+          "details": "Result: \"truly\""
+        }
+      ]
+    },
+    "Web Apps: YouTube (ytd-searchbox)": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Auto-correct in search input",
+          "passed": true,
+          "details": "Result: \"friend\""
+        }
+      ]
+    },
+    "Web Apps: WhatsApp Web (data-tab=10)": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Contraction expansion in chat box",
+          "passed": true,
+          "details": "Result: \"can't\""
+        }
+      ]
+    },
+    "Web Apps: Gmail (Message Body)": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Auto-correct in email compose box",
+          "passed": true,
+          "details": "Result: \"address\""
+        }
+      ]
+    },
+    "Web Apps: Continuous Multi-Token Stream": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "Complex sentence with code, contractions, tech, typos, punctuation",
+          "passed": true,
+          "details": "Actual: \"their colleague didn't receive the user_profile_id note: can't fastapi run \""
+        }
+      ]
+    }
+  }
+}

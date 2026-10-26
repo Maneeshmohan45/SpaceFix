@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-10-26T19:21:07.619Z",
+  "engine": "SymSpell V1 (JavaScript V8)",
+  "dataset_evaluated": "Peter Norvig spell-testset1 & spell-testset2",
+  "accuracy": {
+    "testset1": {
+      "total": 270,
+      "correct": 208,
+      "incorrect": 47,
+      "missed": 15
+    },
+    "testset2": {
+      "total": 400,
+      "correct": 290,
+      "incorrect": 66,
+      "missed": 44
+    },
+    "falsePositives": {
+      "testedCount": 50,
+      "falseCorrections": 0,
+      "corruptedList": [],
+      "falsePositiveRate": 0
+    }
+  },
+  "latency": {
+    "startup": {
+      "dictLoadMs": 28.678300000000036,
+      "indexLoadMs": 760.5011000000002,
+      "engineConstructionMs": 80.88709999999992,
+      "totalStartupMs": 870.0665000000001
+    },
+    "runtime": {
+      "lookup": {
+        "mean": 0.09768110000000116,
+        "p50": 0.0885000000000673,
+        "p95": 0.2177999999998974,
+        "p99": 0.30510000000003856
+      },
+      "ranking": {
+        "mean": 0.012287700000000996,
+        "p50": 0.001299999999901047,
+        "p95": 0.004600000000209548,
+        "p99": 0.012600000000020373
+      },
+      "total": {
+        "mean": 0.11013070000000266,
+        "p50": 0.09050000000024738,
+        "p95": 0.2220999999999549,
+        "p99": 0.3210999999998876
+      }
+    }
+  },
+  "memory": {
+    "baselineHeapMb": 474.20594787597656,
+    "afterDictJsonMb": 478.7024688720703,
+    "dictDeltaMb": 4.49652099609375,
+    "afterIndexJsonMb": 668.1775817871094,
+    "indexDeltaMb": 189.47511291503906,
+    "afterEngineInitMb": 681.4832458496094,
+    "engineDeltaMb": 13.3056640625,
+    "totalNetHeapUsedMb": 207.2772979736328
+  }
+}

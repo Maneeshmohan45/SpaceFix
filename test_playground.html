@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpaceFix - Live Testing Playground</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+    h1 { color: #38bdf8; margin-bottom: 8px; }
+    p.sub { color: #94a3b8; margin-bottom: 24px; }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    h2 { font-size: 1.1rem; color: #e2e8f0; margin-bottom: 12px; }
+    label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; }
+    input[type="text"], input[type="password"], textarea {
+      width: 100%;
+      background: #0f172a;
+      border: 1px solid #475569;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 14px;
+      box-sizing: border-box;
+    }
+    textarea { height: 90px; resize: vertical; }
+    input:focus, textarea:focus { border-color: #38bdf8; }
+    .editable-box {
+      min-height: 90px;
+      background: #0f172a;
+      border: 1px solid #475569;
+      color: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .editable-box:focus { border-color: #a855f7; }
+    .cheatsheet {
+      background: #1e293b;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border-left: 4px solid #38bdf8;
+      font-size: 0.9rem;
+    }
+    .tag {
+      background: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚡ SpaceFix Playground</h1>
+  <p class="sub">Test auto-correction on Spacebar, atomic Backspace undo, and exclusions live in your browser.</p>
+
+  <div class="card">
+    <h2>Tier 1: Standard Form Inputs (Phase 1A Foundation)</h2>
+    
+    <label>Single-line Input (type="text"):</label>
+    <input type="text" placeholder="Type 'speling ' or 'hllo ' and hit Spacebar...">
+
+    <label>Multi-line Textarea:</label>
+    <textarea placeholder="Type: 'hey teh wrok is definately good '..."></textarea>
+  </div>
+
+  <div class="card">
+    <h2>Tier 2: ContentEditable (Phase 1B Chat Simulation)</h2>
+    <label>Simulated WhatsApp / Discord / Slack input:</label>
+    <div class="editable-box" contenteditable="true">Try typing typos here and press Spacebar...</div>
+  </div>
+
+  <div class="card">
+    <h2>Strict Exclusions Guard (Should NEVER mutate)</h2>
+    <label>Password Field (Must stay untouched):</label>
+    <input type="password" value="speling123">
+
+    <label>Explicit spellcheck="false":</label>
+    <input type="text" spellcheck="false" value="speling stays speling">
+  </div>
+
+  <div class="cheatsheet">
+    <strong>Quick Testing Cheatsheet:</strong>
+    <ul>
+      <li><span class="tag">speling </span> $\rightarrow$ changes to <b>spelling</b></li>
+      <li><span class="tag">hllo </span> $\rightarrow$ changes to <b>hello</b></li>
+      <li><span class="tag">teh </span> $\rightarrow$ changes to <b>the</b></li>
+      <li><span class="tag">wrok </span> $\rightarrow$ changes to <b>work</b></li>
+      <li><b>Test Undo:</b> Type <span class="tag">speling </span> $\rightarrow$ immediately hit <b>Backspace</b> $\rightarrow$ reverts back to <b>speling</b>!</li>
+      <li><b>Test Slang:</b> Type <span class="tag">lol</span>, <span class="tag">idk</span>, <span class="tag">bruh</span>, <span class="tag">wifi</span> $\rightarrow$ untouched!</li>
+    </ul>
+  </div>
+</body>
+</html>

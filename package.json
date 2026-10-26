@@ -1,0 +1,19 @@
+{
+  "name": "spacefix",
+  "version": "1.0.0",
+  "description": "Zero-latency in-browser autocorrect extension with atomic backspace-to-undo on Spacebar",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js",
+    "benchmark:all": "node benchmarks/scripts/run_all.js",
+    "benchmark:accuracy": "node benchmarks/scripts/run_accuracy.js",
+    "benchmark:latency": "node benchmarks/scripts/run_latency.js",
+    "benchmark:memory": "node benchmarks/scripts/run_memory.js"
+  },
+  "keywords": [
+    "spellchecker",
+    "symspell",
+    "chrome-extension",
+    "nlp"
+  ],
+  "license": "MIT"
+}

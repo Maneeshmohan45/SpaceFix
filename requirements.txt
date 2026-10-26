@@ -1,0 +1,2 @@
+# Python Development Dependencies for SpaceFix Pipeline
+pytest>=8.0.0
