@@ -121,7 +121,13 @@ SpaceFix/
 
 ## 🚀 Installation & Local Development
 
-### 1. Load in Chromium (Edge, Brave, Chrome)
+### 1. Install Directly from Microsoft Edge Add-ons (Recommended)
+SpaceFix is officially published on the Microsoft Edge Add-ons Store:
+👉 **[Get SpaceFix on Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fkfhnopnfaedjlkgohpbhamafkcbbjjp)**
+
+---
+
+### 2. Load from Source in Chromium (Edge, Brave, Chrome)
 1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/spacefix.git
