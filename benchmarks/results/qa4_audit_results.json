@@ -1,20 +1,20 @@
 {
   "summary": {
     "total": 268,
-    "passed": 248,
-    "failed": 20,
-    "accuracy": "92.54",
+    "passed": 258,
+    "failed": 10,
+    "accuracy": "96.27",
     "latency": {
-      "mean": 0.17314350000000014,
-      "p50": 0.1514999999999418,
-      "p95": 0.22119999999995343,
-      "p99": 0.3275000000003274
+      "mean": 0.23587909999997736,
+      "p50": 0.20720000000073924,
+      "p95": 0.31890000000021246,
+      "p99": 0.5850999999993292
     }
   },
   "categories": {
     "Common Typos": {
-      "passed": 51,
-      "failed": 5,
+      "passed": 55,
+      "failed": 1,
       "tests": [
         {
           "name": "thier -> their",
@@ -23,8 +23,8 @@
         },
         {
           "name": "peice -> piece",
-          "passed": false,
-          "details": "Actual: \"price\""
+          "passed": true,
+          "details": "Actual: \"piece\""
         },
         {
           "name": "truely -> truly",
@@ -83,8 +83,8 @@
         },
         {
           "name": "basicly -> basically",
-          "passed": false,
-          "details": "Actual: \"basic\""
+          "passed": true,
+          "details": "Actual: \"basically\""
         },
         {
           "name": "bussiness -> business",
@@ -168,8 +168,8 @@
         },
         {
           "name": "incidently -> incidentally",
-          "passed": false,
-          "details": "Actual: \"incidently\""
+          "passed": true,
+          "details": "Actual: \"incidentally\""
         },
         {
           "name": "interupt -> interrupt",
@@ -198,8 +198,8 @@
         },
         {
           "name": "occurance -> occurrence",
-          "passed": false,
-          "details": "Actual: \"occurance\""
+          "passed": true,
+          "details": "Actual: \"occurrence\""
         },
         {
           "name": "paralell -> parallel",
@@ -299,8 +299,8 @@
       ]
     },
     "Distance-2 Omissions": {
-      "passed": 5,
-      "failed": 4,
+      "passed": 7,
+      "failed": 2,
       "tests": [
         {
           "name": "mispel -> misspell",
@@ -314,8 +314,8 @@
         },
         {
           "name": "succesfuly -> successfully",
-          "passed": false,
-          "details": "Actual: \"succesfuly\""
+          "passed": true,
+          "details": "Actual: \"successfully\""
         },
         {
           "name": "possesion -> possession",
@@ -329,8 +329,8 @@
         },
         {
           "name": "ocured -> occurred",
-          "passed": false,
-          "details": "Actual: \"cured\""
+          "passed": true,
+          "details": "Actual: \"occurred\""
         },
         {
           "name": "embaras -> embarrass",
@@ -481,13 +481,13 @@
       ]
     },
     "Proper Names Safety": {
-      "passed": 24,
-      "failed": 3,
+      "passed": 25,
+      "failed": 2,
       "tests": [
         {
           "name": "Maya remains untouched",
-          "passed": false,
-          "details": "Actual: \"May\""
+          "passed": true,
+          "details": "Actual: \"Maya\""
         },
         {
           "name": "Liam remains untouched",
@@ -622,8 +622,8 @@
       ]
     },
     "Countries & Places": {
-      "passed": 22,
-      "failed": 2,
+      "passed": 23,
+      "failed": 1,
       "tests": [
         {
           "name": "Argentina remains untouched",
@@ -702,8 +702,8 @@
         },
         {
           "name": "Peru remains untouched",
-          "passed": false,
-          "details": "Actual: \"Per\""
+          "passed": true,
+          "details": "Actual: \"Peru\""
         },
         {
           "name": "Qatar remains untouched",
@@ -899,8 +899,8 @@
       ]
     },
     "Slang & Chat Terms": {
-      "passed": 16,
-      "failed": 2,
+      "passed": 17,
+      "failed": 1,
       "tests": [
         {
           "name": "sup remains untouched",
@@ -939,8 +939,8 @@
         },
         {
           "name": "wp remains untouched",
-          "passed": false,
-          "details": "Actual: \"we\""
+          "passed": true,
+          "details": "Actual: \"wp\""
         },
         {
           "name": "rn remains untouched",
@@ -1227,8 +1227,8 @@
       ]
     },
     "Trailing Punctuation": {
-      "passed": 17,
-      "failed": 1,
+      "passed": 18,
+      "failed": 0,
       "tests": [
         {
           "name": "thier: -> their:",
@@ -1282,8 +1282,8 @@
         },
         {
           "name": "peice. -> piece.",
-          "passed": false,
-          "details": "Actual: \"price.\""
+          "passed": true,
+          "details": "Actual: \"piece.\""
         },
         {
           "name": "thier, -> their,",
