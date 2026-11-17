@@ -39,7 +39,7 @@ Measured across 1,000 real Chromium DOM keydown cycles and Norvig benchmark corp
 | **V8 Heap Memory Footprint** | **~82.4 MB** | $< 120\text{ MB}$ | 🟢 Completely bounded |
 | **Valid Vocabulary Safety** | **100.0%** | $> 99.0\%$ | 🟢 Zero false positives on valid words |
 | **Code Identifiers Safety** | **100.0%** | $100.0\%$ | 🟢 Zero corruption of code identifiers |
-| **Automated Test Suite** | **42 / 42 PASS** | $100\%$ | 🟢 0 regressions across all suites |
+| **Automated Test Suite** | **51 / 51 PASS** | $100\%$ | 🟢 0 regressions across all suites |
 
 ---
 
@@ -182,11 +182,19 @@ pytest data_pipeline/tests
 
 ## 🗺️ V1 Scope vs V2 Roadmap
 
-### ✅ Completed in V1
+### ✅ Completed in V1 & Current Production Build
 - [x] Zero-latency in-tab SymSpell engine (85,296 words + 1.4M deletion keys).
+- [x] **Edit-Type-Weighted Noisy-Channel Ranker**:
+  - Adjacent transposition discount (0.65x): resolves `peice` $\to$ `piece` over `price`.
+  - Geminate omission discount (0.60x): resolves `helo` $\to$ `hello`, `aple` $\to$ `apple`, `leter` $\to$ `letter`, `stoped` $\to$ `stopped`.
+  - Tail completion discount (0.60x): resolves `wher` $\to$ `where`, `som` $\to$ `some`, `ther` $\to$ `there`.
+  - First-letter changed surcharge (+1.7 decades): resolves `ocured` $\to$ `occurred` over `cured`.
+  - Preallocated `Float64Array _M` DP matrix (0 GC memory allocations, ~82MB flat V8 heap).
 - [x] Single-step atomic Backspace undo with trailing whitespace removal.
 - [x] Rejection memory state machine to eliminate infinite correction loops.
-- [x] Contraction expansion map (`cant` $\rightarrow$ `can't`, `couldve` $\rightarrow$ `could've`).
+- [x] Contraction expansion map (`cant` $\rightarrow$ `can't`, `couldve` $\rightarrow$ `could've`) with real English words (`were`, `ill`) protected.
+- [x] 2-letter token cutoff guard (`wp`, `gg`, `rn` protected).
+- [x] Capitalized proper noun closed-class shield (`Maya` $\ne$ `May`, `Peru` $\ne$ `Per`).
 - [x] Case restoration (`Thier` $\rightarrow$ `Their`, `RECIEVE` $\rightarrow$ `RECEIVE`).
 - [x] Sentence boundary punctuation handling (colons, semicolons, commas, periods).
 - [x] Exclusion guards for code identifiers, passwords, and URLs.
@@ -194,33 +202,24 @@ pytest data_pipeline/tests
 - [x] Browser popup with enable toggle, whitelist management, and live stats.
 
 ### 🔮 Planned for V2
-- [ ] Contextual n-gram / bigram disambiguation for real-word homophones and frequency ties (e.g., `helo` -> `hello` vs `help`).
-- [ ] Edit-type weighting (giving prefix extensions and double-consonant completions priority over letter substitutions).
+- [ ] Contextual n-gram / bigram disambiguation for real-word homophones and semantic ambiguity (e.g. *"piece of cake"* vs *"market price"*).
+- [ ] Layer 2 Background NLP Reviewer with non-blocking corner-badge suggestion UI.
 - [ ] User custom personal dictionary in popup settings.
 - [ ] Multi-language vocabulary packs (Spanish, French, German).
 
 ---
 
-## ⚠️ Known V1 Limitations & Technical Explanation
+## 🛡️ Algorithmic Robustness & Precision Guarantee
 
-SpaceFix V1 is engineered with a strict **Precision > Recall** philosophy to guarantee zero typing lag (< 0.2 ms) without complex cloud dependencies. As a result, users may observe a known linguistic phenomenon called **Frequency Dominance Over Edit Types**:
+SpaceFix is engineered with a strict **Precision > Recall** philosophy to guarantee zero typing lag (< 0.2 ms) without complex cloud dependencies.
 
-### 1. Observed Behaviors
-- Typing `helo` auto-corrects to `help` instead of `hello`.
-- Typing `wher` auto-corrects to `when` instead of `where`.
-- Typing `aple` auto-corrects to `able` instead of `apple`.
-- Typing `som` auto-corrects to `so` instead of `some`.
+### 1. Edit-Type Weighted Resolution
+By weighting character operations (adjacent swaps, doubled letters, prefix completions) against raw unigram frequency, SpaceFix accurately prioritizes natural typographical slips over high-frequency word collisions.
 
-### 2. Why This Happens (The Algorithmic Mechanics)
-In edit distance algorithms like SymSpell / Damerau-Levenshtein, **inserting a letter** and **substituting a letter** both carry an identical edit distance penalty of **1 (Distance 1)**:
-- **`helo` $\rightarrow$ `hello`** requires inserting an `l` (Distance 1). `hello` has a frequency count of **~33 Million** in our 85k dictionary.
-- **`helo` $\rightarrow$ `help`** requires substituting `o` with `p` (Distance 1). `help` has an astronomical frequency count of **~611 Million** in the English corpus.
-
-Because `help` appears **18.5x more frequently** in general English than `hello`, the unigram ranker selects `help`. Similarly, `when` (~650 Million) outranks `where` (~360 Million) when evaluated against the stem `wher`.
-
-### 3. How V1 Protects the User
-1. **Single-Step Atomic Undo**: If a high-frequency substitution occurs that you did not want, pressing **Backspace once** instantly restores your exact original typo (`helo`) and strips the trailing phantom space.
+### 2. Multi-Layer Safety Guards
+1. **Single-Step Atomic Undo**: If an auto-correction is not what you wanted, pressing **Backspace once** instantly restores your exact original typo and strips the trailing phantom space.
 2. **Infinite Rejection Memory**: Once undone, SpaceFix remembers your rejection and **never re-corrects that word** again during that editing session, permanently preventing correction loops.
+3. **Word Length & Proper Noun Shields**: Tokens under 3 letters and capitalized proper nouns are protected against unwanted single-letter mutations.
 
 ---
 
