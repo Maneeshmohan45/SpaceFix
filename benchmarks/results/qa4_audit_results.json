@@ -1,14 +1,14 @@
 {
   "summary": {
     "total": 268,
-    "passed": 258,
-    "failed": 10,
-    "accuracy": "96.27",
+    "passed": 265,
+    "failed": 3,
+    "accuracy": "98.88",
     "latency": {
-      "mean": 0.23587909999997736,
-      "p50": 0.20720000000073924,
-      "p95": 0.31890000000021246,
-      "p99": 0.5850999999993292
+      "mean": 0.21011409999999342,
+      "p50": 0.19099999999980355,
+      "p95": 0.3059000000002925,
+      "p99": 0.4566999999997279
     }
   },
   "categories": {
@@ -481,8 +481,8 @@
       ]
     },
     "Proper Names Safety": {
-      "passed": 25,
-      "failed": 2,
+      "passed": 27,
+      "failed": 0,
       "tests": [
         {
           "name": "Maya remains untouched",
@@ -531,8 +531,8 @@
         },
         {
           "name": "Zoe remains untouched",
-          "passed": false,
-          "details": "Actual: \"Zone\""
+          "passed": true,
+          "details": "Actual: \"Zoe\""
         },
         {
           "name": "Rajesh remains untouched",
@@ -571,8 +571,8 @@
         },
         {
           "name": "Manoj remains untouched",
-          "passed": false,
-          "details": "Actual: \"Manor\""
+          "passed": true,
+          "details": "Actual: \"Manoj\""
         },
         {
           "name": "vikram remains untouched",
@@ -622,8 +622,8 @@
       ]
     },
     "Countries & Places": {
-      "passed": 23,
-      "failed": 1,
+      "passed": 24,
+      "failed": 0,
       "tests": [
         {
           "name": "Argentina remains untouched",
@@ -662,8 +662,8 @@
         },
         {
           "name": "Hungary remains untouched",
-          "passed": false,
-          "details": "Actual: \"Hungry\""
+          "passed": true,
+          "details": "Actual: \"Hungary\""
         },
         {
           "name": "Ireland remains untouched",
@@ -748,8 +748,8 @@
       ]
     },
     "Modern Tech & Tools": {
-      "passed": 26,
-      "failed": 3,
+      "passed": 29,
+      "failed": 0,
       "tests": [
         {
           "name": "graphql remains untouched",
@@ -833,8 +833,8 @@
         },
         {
           "name": "aws remains untouched",
-          "passed": false,
-          "details": "Actual: \"as\""
+          "passed": true,
+          "details": "Actual: \"aws\""
         },
         {
           "name": "azure remains untouched",
@@ -843,8 +843,8 @@
         },
         {
           "name": "gcp remains untouched",
-          "passed": false,
-          "details": "Actual: \"gap\""
+          "passed": true,
+          "details": "Actual: \"gcp\""
         },
         {
           "name": "cloudflare remains untouched",
@@ -878,8 +878,8 @@
         },
         {
           "name": "vite remains untouched",
-          "passed": false,
-          "details": "Actual: \"vote\""
+          "passed": true,
+          "details": "Actual: \"vite\""
         },
         {
           "name": "streamlit remains untouched",
@@ -899,8 +899,8 @@
       ]
     },
     "Slang & Chat Terms": {
-      "passed": 17,
-      "failed": 1,
+      "passed": 18,
+      "failed": 0,
       "tests": [
         {
           "name": "sup remains untouched",
@@ -969,8 +969,8 @@
         },
         {
           "name": "thx remains untouched",
-          "passed": false,
-          "details": "Actual: \"the\""
+          "passed": true,
+          "details": "Actual: \"thx\""
         },
         {
           "name": "pls remains untouched",

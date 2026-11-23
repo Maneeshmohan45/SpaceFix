@@ -2,7 +2,11 @@
 
 > **Zero-latency, 100% offline in-browser auto-correct on Spacebar with single-step atomic Backspace-to-undo.**
 
-SpaceFix is a lightweight Chromium browser extension (Manifest V3) engineered to fix broken non-word typos in real time without lag, cloud API roundtrips, or aggressive false positives.
+[![Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Install_Now-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/addon/spacefix/)
+[![Edge Add-ons](https://img.shields.io/badge/Edge_Add--ons-Install_Now-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/fkfhnopnfaedjlkgohpbhamafkcbbjjp)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All_Rights_Reserved-red.svg?style=for-the-badge)](LICENSE)
+
+SpaceFix is a lightweight browser extension (Manifest V3) engineered for Chromium and Firefox to fix broken non-word typos in real time without lag, cloud API roundtrips, or aggressive false positives.
 
 ---
 
@@ -39,7 +43,7 @@ Measured across 1,000 real Chromium DOM keydown cycles and Norvig benchmark corp
 | **V8 Heap Memory Footprint** | **~82.4 MB** | $< 120\text{ MB}$ | 🟢 Completely bounded |
 | **Valid Vocabulary Safety** | **100.0%** | $> 99.0\%$ | 🟢 Zero false positives on valid words |
 | **Code Identifiers Safety** | **100.0%** | $100.0\%$ | 🟢 Zero corruption of code identifiers |
-| **Automated Test Suite** | **51 / 51 PASS** | $100\%$ | 🟢 0 regressions across all suites |
+| **Automated Test Suite** | **63 / 63 PASS** | $100\%$ | 🟢 0 regressions across all suites |
 
 ---
 
@@ -97,6 +101,13 @@ SpaceFix/
 │       ├── popup.css               # Clean modern dark/light popup stylesheet
 │       └── popup.js                # Toggle on/off, whitelist, and live stats counters
 │
+├── extension_firefox/              # Dedicated Mozilla Firefox MV3 Build (Gecko compatible)
+│   ├── manifest.json               # Gecko MV3 manifest (id: spacefix@maneeshmohan.com)
+│   ├── assets/                     # Dictionary and binary-optimized SymSpell index
+│   ├── background/                 # Background service worker script
+│   ├── content/                    # Firefox DOM handlers and SymSpell engine
+│   └── popup/                      # Extension popup interface
+│
 └── tests/                          # Automated Node.js integration & regression test suites
     ├── dom/
     │   ├── content_editable.test.js
@@ -119,33 +130,17 @@ SpaceFix/
 
 ---
 
-## 🚀 Installation & Local Development
+## 🚀 Official Store Installations
 
-### 1. Install Directly from Microsoft Edge Add-ons (Recommended)
-SpaceFix is officially published on the Microsoft Edge Add-ons Store:
+SpaceFix is officially published and live on major browser stores:
+
+### 🦊 Mozilla Firefox
+Install directly from the official Mozilla Add-ons (AMO) catalog:  
+👉 **[Get SpaceFix on Firefox Browser Add-ons](https://addons.mozilla.org/addon/spacefix/)**
+
+### 🌊 Microsoft Edge
+Install directly from the official Microsoft Edge Add-ons Store:  
 👉 **[Get SpaceFix on Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fkfhnopnfaedjlkgohpbhamafkcbbjjp)**
-
----
-
-### 2. Load from Source in Chromium (Edge, Brave, Chrome)
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/spacefix.git
-   cd spacefix
-   ```
-2. Open your browser and navigate to the extensions page:
-   - **Microsoft Edge**: `edge://extensions`
-   - **Brave Browser**: `brave://extensions`
-   - **Google Chrome**: `chrome://extensions`
-3. Toggle on **Developer mode** (top-right or bottom-left toggle).
-4. Click **Load unpacked** and select the [`extension/`](file:///c:/Users/dundi/Desktop/Spell%20correcter/extension) folder inside this repository.
-5. SpaceFix is now active on all websites!
-
-### 2. Quick Testing with `test_playground.html`
-Open [`test_playground.html`](file:///c:/Users/dundi/Desktop/Spell%20correcter/test_playground.html) directly in your browser:
-- Try typing common typos: `thier `, `adress `, `freind `, `cant `, `beleive: `.
-- Press **Backspace** immediately after any auto-correction to verify atomic undo.
-- Try typing code identifiers: `user_profile_id `, `order_id `, `customer-nav-link `.
 
 ---
 
@@ -154,7 +149,7 @@ Open [`test_playground.html`](file:///c:/Users/dundi/Desktop/Spell%20correcter/t
 ### JavaScript Unit, DOM & Regression Suites
 Requires **Node.js (v18+)**:
 ```bash
-# Run all 42 automated tests
+# Run all 63 automated tests (including Firefox MV3 audit)
 npm test
 
 # Run the 268-token adversarial QA audit runner
@@ -200,6 +195,9 @@ pytest data_pipeline/tests
 - [x] Exclusion guards for code identifiers, passwords, and URLs.
 - [x] ProseMirror & Shadow DOM support (ChatGPT, Gemini, YouTube, WhatsApp, Gmail).
 - [x] Browser popup with enable toggle, whitelist management, and live stats.
+- [x] Multi-Browser MV3 Ecosystem: Official releases on **Microsoft Edge Add-ons** and **Mozilla Firefox Add-ons (AMO)**.
+- [x] Culturally Comprehensive Lexicon: 86,433 words with curated Indian names (*Maneesh, Mohan, Charmi, Rikku, Sai, Prasad, Rekha*), global short names (*Dan, Ben, Tim*), and deities across world faiths.
+- [x] Transposition Protection Shield: Distinguishes genuine letter swaps (`Teh` $\to$ `The`) from 3-letter name substitutions (`Dan` $\ne$ `Day`, `Ben` $\ne$ `Been`).
 
 ### 🔮 Planned for V2
 - [ ] Contextual n-gram / bigram disambiguation for real-word homophones and semantic ambiguity (e.g. *"piece of cake"* vs *"market price"*).
@@ -225,4 +223,4 @@ By weighting character operations (adjacent swaps, doubled letters, prefix compl
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+Copyright (c) 2026 Maneesh Mohan. All Rights Reserved. See [LICENSE](LICENSE) for terms.

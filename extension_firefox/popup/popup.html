@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpaceFix</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-title">
+        <span class="icon">⚡</span>
+        <h1>SpaceFix</h1>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggle-enabled" checked>
+        <span class="slider round"></span>
+      </label>
+    </header>
+
+    <div class="status-card" id="status-card">
+      <span class="status-indicator active" id="status-indicator"></span>
+      <span class="status-text" id="status-text">Active on this page</span>
+    </div>
+
+    <section class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-number" id="stat-corrections">0</span>
+        <span class="stat-label">Typos Fixed</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number" id="stat-undos">0</span>
+        <span class="stat-label">Undos</span>
+      </div>
+    </section>
+
+    <section class="whitelist-section">
+      <h3>Personal Whitelist</h3>
+      <p class="subtitle">Words that should never be auto-corrected</p>
+      
+      <div class="input-group">
+        <input type="text" id="whitelist-input" placeholder="e.g. friend's name, jargon" autocomplete="off">
+        <button id="add-whitelist-btn">Add</button>
+      </div>
+
+      <div class="whitelist-tags" id="whitelist-tags">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>🔒 100% On-Device & Private (0 Network Calls)</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

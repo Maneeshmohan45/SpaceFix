@@ -467,3 +467,9 @@ fastapi
 pytorch
 nextjs
 tailwind
+aws
+gcp
+vite
+thx
+hungary
+zoe

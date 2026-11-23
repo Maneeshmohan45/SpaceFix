@@ -158,6 +158,14 @@ class CandidateRanker {
     if (top.sameFirst) {
       if (isCapitalized) {
         if (SHORT_GRAMMATICAL_STOP_WORDS.has(win.word.toLowerCase())) return null;
+        if (orig.length <= 3) {
+          // Protect 3-letter proper names/acronyms (Dan, Ben, Ron, Tim, Kim, Jon) from high-frequency
+          // substitutions (Day, Run, Kit) or insertions (Been, Time, John).
+          // Only permit genuine letter swaps/transpositions (e.g. Teh -> The).
+          const isTransposition = (orig.length === win.word.length) &&
+            (orig.toLowerCase().split('').sort().join('') === win.word.toLowerCase().split('').sort().join(''));
+          if (!isTransposition) return null;
+        }
         if (freq < 5000000) return null; // Protect unlisted proper nouns
       }
       if (freq < this.minDistance1Floor) return null;

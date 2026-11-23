@@ -64,6 +64,9 @@ def build_curated_dictionary(
     freq_file: str,
     slang_file: str,
     contractions_file: str,
+    names_indian_file: str = "",
+    names_deities_file: str = "",
+    names_global_file: str = "",
     target_vocab_size: int = 85000
 ) -> dict[str, int]:
     """Merges all sources into a balanced, verified vocabulary."""
@@ -75,11 +78,17 @@ def build_curated_dictionary(
     freq_table = load_frequency_table(freq_file)
     print(f"  Web 1T words loaded: {len(freq_table):,}")
 
-    print("Loading slang and contractions...")
+    print("Loading slang, contractions, Indian names, deities, and global names...")
     slang_words = load_slang_words(slang_file)
     contractions = load_contractions(contractions_file)
+    indian_names = load_slang_words(names_indian_file) if names_indian_file else set()
+    deity_names = load_slang_words(names_deities_file) if names_deities_file else set()
+    global_names = load_slang_words(names_global_file) if names_global_file else set()
     print(f"  Slang entries: {len(slang_words):,}")
     print(f"  Contraction entries: {len(contractions):,}")
+    print(f"  Indian names entries: {len(indian_names):,}")
+    print(f"  Deity names entries: {len(deity_names):,}")
+    print(f"  Global short names entries: {len(global_names):,}")
 
     # Single-letter words permitted: strictly 'a' and 'i'
     single_letters_permitted = {"a", "i"}
@@ -109,6 +118,21 @@ def build_curated_dictionary(
             # Use web frequency if available, or default to a prominent frequency
             final_dict[word] = freq_table.get(word, 5_000_000)
 
+    # 3b. Guarantee Indian names are included so names are never aggressively mutated
+    for name in indian_names:
+        if name not in final_dict:
+            final_dict[name] = freq_table.get(name, 5_000_000)
+
+    # 3c. Guarantee Deity / religious names are included so sacred names are never corrupted
+    for deity in deity_names:
+        if deity not in final_dict:
+            final_dict[deity] = freq_table.get(deity, 10_000_000)
+
+    # 3d. Guarantee Global short names are included (dan, ben, ron, tim, kim, jon, etc.)
+    for name in global_names:
+        if name not in final_dict:
+            final_dict[name] = freq_table.get(name, 5_000_000)
+
     # 4. Include punctuated contractions
     for unpunctuated, punctuated in contractions.items():
         base_freq = freq_table.get(unpunctuated, 10_000_000)
@@ -123,6 +147,9 @@ def main():
     scowl_dir = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "scowl")
     freq_file = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "frequency", "count_1w.txt")
     slang_file = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "slang.txt")
+    names_indian_file = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "names_indian.txt")
+    names_deities_file = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "names_deities.txt")
+    names_global_file = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "names_global.txt")
     contractions_file = os.path.join(root_dir, "data_pipeline", "raw_wordlists", "contractions.json")
 
     output_dir = os.path.join(root_dir, "data_pipeline", "output")
@@ -130,7 +157,12 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(extension_assets_dir, exist_ok=True)
 
-    dictionary = build_curated_dictionary(scowl_dir, freq_file, slang_file, contractions_file)
+    dictionary = build_curated_dictionary(
+        scowl_dir, freq_file, slang_file, contractions_file,
+        names_indian_file=names_indian_file,
+        names_deities_file=names_deities_file,
+        names_global_file=names_global_file
+    )
 
     output_path = os.path.join(output_dir, "dictionary.json")
     with open(output_path, "w", encoding="utf-8") as f:

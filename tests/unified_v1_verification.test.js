@@ -59,7 +59,7 @@ function typeToken(orchestrator, text) {
   return el.value;
 }
 
-describe('SpaceFix V1 Unified Test Suite', () => {
+describe('SpaceFix V1 Master Unified Test Suite', () => {
 
   test('Target Collisions Suite (Weighted Damerau-Levenshtein)', () => {
     const orchestrator = createHarness();
@@ -102,6 +102,20 @@ describe('SpaceFix V1 Unified Test Suite', () => {
     }
   });
 
+  test('Capitalized Transposition vs Substitution: "Teh" -> "The" while "Dan", "Ben", "Tim" stay intact', () => {
+    const orchestrator = createHarness();
+    // Genuine capitalized letter-swap typos must correct cleanly
+    assert.equal(typeToken(orchestrator, 'Teh'), 'The', 'Capitalized transposition "Teh" must correct to "The"');
+    assert.equal(typeToken(orchestrator, 'Wrok'), 'Work', 'Capitalized transposition "Wrok" must correct to "Work"');
+
+    // 3-letter proper names must NOT mutate to high-frequency common words
+    const names = ['Dan', 'Ben', 'Ron', 'Jon', 'Tim', 'Kim', 'Max', 'Ian', 'Joe', 'Roy', 'Jay', 'Guy'];
+    for (const name of names) {
+      const res = typeToken(orchestrator, name);
+      assert.equal(res, name, `Capitalized short name "${name}" must remain completely untouched, got "${res}"`);
+    }
+  });
+
   test('2-Letter Slang & Abbreviation Shield (Guard 2)', () => {
     const orchestrator = createHarness();
     const shortTokens = ['wp', 'gg', 'rn', 'id', 'ts', 'pr', 'db', 'np'];
@@ -114,11 +128,39 @@ describe('SpaceFix V1 Unified Test Suite', () => {
 
   test('Proper Noun & Country Protection (Guard 1)', () => {
     const orchestrator = createHarness();
-    const properNouns = ['Maya', 'Peru', 'Vikram', 'Sneha', 'Ananya', 'Meera', 'Karthik', 'Daniel'];
+    const properNouns = ['Maya', 'Peru', 'Hungary', 'Vikram', 'Sneha', 'Ananya', 'Meera', 'Karthik', 'Daniel'];
 
     for (const name of properNouns) {
       const res = typeToken(orchestrator, name);
       assert.equal(res, name, `Proper noun "${name}" must remain untouched, got "${res}"`);
+    }
+  });
+
+  test('Global & Western Short Names (Lowercase & Capitalized)', () => {
+    const orchestrator = createHarness();
+    const shortNames = [
+      'dan', 'Dan',
+      'ben', 'Ben',
+      'ron', 'Ron',
+      'jon', 'Jon',
+      'tim', 'Tim',
+      'kim', 'Kim',
+      'ian', 'Ian',
+      'amy', 'Amy',
+      'eva', 'Eva',
+      'zoe', 'Zoe',
+      'max', 'Max',
+      'sam', 'Sam',
+      'bob', 'Bob',
+      'tom', 'Tom',
+      'ned', 'Ned',
+      'rob', 'Rob',
+      'ken', 'Ken'
+    ];
+
+    for (const name of shortNames) {
+      const res = typeToken(orchestrator, name);
+      assert.equal(res, name, `Short name "${name}" must remain completely untouched, got "${res}"`);
     }
   });
 
@@ -164,13 +206,100 @@ describe('SpaceFix V1 Unified Test Suite', () => {
     assert.equal(resIll, 'ill', 'Valid word "ill" must NOT mutate to "I\'ll"');
   });
 
-  test('Trailing Punctuation Preservation', () => {
+  test('Indian Names Safety: Common names must remain 100% untouched', () => {
+    const orchestrator = createHarness();
+    const names = [
+      'mohan', 'Mohan',
+      'maneesh', 'Maneesh',
+      'charmi', 'Charmi',
+      'rikku', 'Rikku',
+      'sai', 'Sai',
+      'prasad', 'Prasad',
+      'rekha', 'Rekha',
+      'rohit', 'Rohit',
+      'priya', 'Priya',
+      'rahul', 'Rahul',
+      'srinivas', 'Srinivas',
+      'venkatesh', 'Venkatesh'
+    ];
+
+    for (const name of names) {
+      const res = typeToken(orchestrator, name);
+      assert.equal(res, name, `Name "${name}" must remain completely untouched, got "${res}"`);
+    }
+  });
+
+  test('Deities & Sacred Names Safety: Deities across all faiths must remain 100% untouched', () => {
+    const orchestrator = createHarness();
+    const sacred = [
+      'jesus', 'Jesus', 'christ', 'Christ',
+      'allah', 'Allah', 'muhammad', 'Muhammad',
+      'krishna', 'Krishna', 'shiva', 'Shiva', 'vishnu', 'Vishnu', 'rama', 'Rama',
+      'ganesh', 'Ganesh', 'ganesha', 'Ganesha', 'hanuman', 'Hanuman',
+      'murugan', 'Murugan', 'ayyappa', 'Ayyappa', 'venkateshwara', 'Venkateshwara',
+      'radha', 'Radha', 'sita', 'Sita', 'lakshmi', 'Lakshmi', 'durga', 'Durga',
+      'waheguru', 'Waheguru', 'buddha', 'Buddha', 'mahavira', 'Mahavira'
+    ];
+
+    for (const term of sacred) {
+      const res = typeToken(orchestrator, term);
+      assert.equal(res, term, `Sacred name "${term}" must remain completely untouched, got "${res}"`);
+    }
+  });
+
+  test('English Words Near Names Safety: Valid English words must NEVER mutate', () => {
+    const orchestrator = createHarness();
+    const words = [
+      'moan', 'charm', 'risk', 'said', 'rehab', 'parsed',
+      'ram', 'mark', 'luke', 'john', 'paul', 'peter', 'mary', 'sam', 'bob'
+    ];
+
+    for (const word of words) {
+      const res = typeToken(orchestrator, word);
+      assert.equal(res, word, `Valid English word "${word}" must remain completely untouched, got "${res}"`);
+    }
+  });
+
+  test('Name Misspellings Correction: Non-word typos of names must correct to proper spelling', () => {
+    const orchestrator = createHarness();
+    const typos = [
+      ['krshna', 'krishna'],
+      ['gnesha', 'ganesha'],
+      ['budha', 'buddha']
+    ];
+
+    for (const [typo, expected] of typos) {
+      const res = typeToken(orchestrator, typo);
+      assert.equal(res.toLowerCase(), expected.toLowerCase(), `Typo "${typo}" must correct to "${expected}", got "${res}"`);
+    }
+  });
+
+  test('Modern Tech & Cloud Tools Shield: Tech acronyms and tools must remain untouched', () => {
+    const orchestrator = createHarness();
+    const techTerms = ['aws', 'gcp', 'vite', 'redis', 'docker', 'kubernetes', 'vscode', 'streamlit', 'thx'];
+
+    for (const term of techTerms) {
+      const res = typeToken(orchestrator, term);
+      assert.equal(res, term, `Tech term "${term}" must remain completely untouched, got "${res}"`);
+    }
+  });
+
+  test('Trailing Punctuation Preservation (Words, Names & Sacred Terms)', () => {
     const orchestrator = createHarness();
     const res1 = typeToken(orchestrator, 'peice.');
     assert.equal(res1, 'piece.', `Trailing period must be preserved, got "${res1}"`);
 
     const res2 = typeToken(orchestrator, 'helo!');
     assert.equal(res2, 'hello!', `Trailing exclamation must be preserved, got "${res2}"`);
+
+    const res3 = typeToken(orchestrator, 'Maneesh,');
+    assert.equal(res3, 'Maneesh,', `Name with comma must be preserved, got "${res3}"`);
+
+    const res4 = typeToken(orchestrator, 'Jesus!');
+    assert.equal(res4, 'Jesus!', `Sacred name with exclamation must be preserved, got "${res4}"`);
+
+    const res5 = typeToken(orchestrator, 'Dan?');
+    assert.equal(res5, 'Dan?', `Short name with question mark must be preserved, got "${res5}"`);
   });
 
   test('Atomic Backspace Undo & Rejection Memory', () => {

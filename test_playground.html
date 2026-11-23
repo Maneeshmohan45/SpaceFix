@@ -98,12 +98,15 @@
   <div class="cheatsheet">
     <strong>Quick Testing Cheatsheet:</strong>
     <ul>
-      <li><span class="tag">speling </span> $\rightarrow$ changes to <b>spelling</b></li>
-      <li><span class="tag">hllo </span> $\rightarrow$ changes to <b>hello</b></li>
-      <li><span class="tag">teh </span> $\rightarrow$ changes to <b>the</b></li>
-      <li><span class="tag">wrok </span> $\rightarrow$ changes to <b>work</b></li>
-      <li><b>Test Undo:</b> Type <span class="tag">speling </span> $\rightarrow$ immediately hit <b>Backspace</b> $\rightarrow$ reverts back to <b>speling</b>!</li>
-      <li><b>Test Slang:</b> Type <span class="tag">lol</span>, <span class="tag">idk</span>, <span class="tag">bruh</span>, <span class="tag">wifi</span> $\rightarrow$ untouched!</li>
+      <li><b>Core Typo Collisions:</b> Type <span class="tag">peice </span> &rarr; <b>piece</b> | <span class="tag">helo </span> &rarr; <b>hello</b> | <span class="tag">aple </span> &rarr; <b>apple</b> | <span class="tag">wher </span> &rarr; <b>where</b> | <span class="tag">som </span> &rarr; <b>some</b></li>
+      <li><b>Sentence-Start Transposition:</b> Type <span class="tag">Teh </span> &rarr; <b>The</b></li>
+      <li><b>Contractions Expansion:</b> Type <span class="tag">dont </span> &rarr; <b>don't</b> | <span class="tag">cant </span> &rarr; <b>can't</b> | <span class="tag">im </span> &rarr; <b>I'm</b> | <span class="tag">ive </span> &rarr; <b>I've</b> | <span class="tag">yall </span> &rarr; <b>y'all</b></li>
+      <li><b>Atomic Undo (Backspace):</b> Type <span class="tag">peice </span> &rarr; hit <b>Backspace</b> once &rarr; restores to <b>peice</b> (and loop immunity prevents re-triggering!)</li>
+      <li><b>Indian Names (Untouched):</b> Type <span class="tag">mohan</span>, <span class="tag">maneesh</span>, <span class="tag">charmi</span>, <span class="tag">sai</span>, <span class="tag">prasad</span>, <span class="tag">rekha</span>, <span class="tag">srinivas</span> &rarr; 100% untouched!</li>
+      <li><b>Short Names (Untouched):</b> Type <span class="tag">Dan</span>, <span class="tag">Ben</span>, <span class="tag">Ron</span>, <span class="tag">Tim</span>, <span class="tag">Kim</span>, <span class="tag">Jon</span> &rarr; 100% untouched!</li>
+      <li><b>Deities & Sacred Terms (Untouched):</b> Type <span class="tag">jesus</span>, <span class="tag">allah</span>, <span class="tag">krishna</span>, <span class="tag">shiva</span>, <span class="tag">rama</span>, <span class="tag">ganesh</span>, <span class="tag">waheguru</span>, <span class="tag">buddha</span> &rarr; 100% untouched!</li>
+      <li><b>Valid English Words (Untouched):</b> Type <span class="tag">were</span>, <span class="tag">ill</span>, <span class="tag">so</span>, <span class="tag">when</span> &rarr; 100% untouched!</li>
+      <li><b>Slang & Modern Tools (Untouched):</b> Type <span class="tag">aws</span>, <span class="tag">gcp</span>, <span class="tag">vite</span>, <span class="tag">thx</span>, <span class="tag">lol</span>, <span class="tag">idk</span> &rarr; 100% untouched!</li>
     </ul>
   </div>
 </body>
