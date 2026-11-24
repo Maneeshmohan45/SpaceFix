@@ -1,6 +1,6 @@
 {
   "name": "spacefix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-latency in-browser autocorrect extension with atomic backspace-to-undo on Spacebar",
   "scripts": {
     "test": "node --test tests/**/*.test.js",
